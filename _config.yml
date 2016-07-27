@@ -1,0 +1,30 @@
+# Header
+
+# Content
+
+
+index_widgets:
+# - category
+# - tagcloud
+# - archive
+
+# widget behavior
+archive_type: 'monthly'
+show_count: false
+
+
+# Writing
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+  style: 'github'
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+theme: apollo
+github:
+douban:
+weibo:

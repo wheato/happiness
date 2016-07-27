@@ -1,0 +1,39 @@
+<div class="m-container m-content-width">
+  <ul class="m-article-list">
+    <% page.posts.each(function(post){ %>
+      <li class="article">
+        <div class="inner">
+          <a href="<%- url_for(post.path)%>" class="cover">
+            <img class="lazy-load" src="" alt="" data-src="<%= post.cover %>"/>
+          </a>
+          <div class="info">
+            <h2><a href="<%- url_for(post.path)%>"><%= post.title %></a></h2>
+            <div class="m-tags">
+              <%- list_tags(post.tags, {
+                show_count: false,
+                style: 'a',
+                order: -1
+              }) %>
+            </div>
+            <time class="pub-time"><%- date(post.date, 'YYYY.M.D') %></time>
+          </div>
+        </div>
+      </li>
+    <% }) %>
+
+  </ul>
+  <div class="m-navigator">
+    <% if (page.prev == 0 ) { %>
+      <a class="prev disable" href="javascript:void(0);">上一页</a>
+    <% } else { %>
+      <a class="prev" href=" <%= page.prev_link %> ">上一页</a>
+    <% } %>
+
+    <% if (page.next == 0 ) { %>
+      <a class="next disable" href="javascript:void(0);">下一页</a>
+    <% } else { %>
+      <a class="next" href=" <%= page.next_link %> ">下一页</a>
+    <% } %>
+
+  </div>
+</div>

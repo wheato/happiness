@@ -1,0 +1,33 @@
+<header class="m-header" data-bg="">
+  <div class="m-content-width">
+    <% if (is_home()){ %>
+    <div class="title">
+      <h1><%= config.title %></h1>
+      <h3><%= config.subtitle %></h3>
+    </div>
+    <ul class="m-sns-links">
+      <li class="item weibo"><a href="#">weibo</a></li>
+      <li class="item github"><a href="#">github</a></li>
+      <li class="item douban"><a href="#">douban</a></li>
+    </ul>
+    <% } else if (is_tag()) { %>
+    <a class="btn-back-home" href="<%= config.root %>">Home</a>
+    <div class="big-tag">
+      <div class="tag-name"><%= page.tag %></div>
+    </div>
+    <% } else if (is_post()) { %>
+    <a class="btn-back-home" href="<%= config.root %>">Home</a>
+    <div class="article-title">
+      <h2> <%= page.title %> </h2>
+      <time class="pub-time"> <%- date(page.date, 'YYYY.M.D') %></time>
+    </div>
+    <div class="m-tags">
+      <%- list_tags(page.tags, {
+        show_count: false,
+        style: 'a',
+        order: -1
+      }) %>
+    </div>
+    <% } %>
+  </div>
+</header>
