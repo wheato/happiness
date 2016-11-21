@@ -12,3 +12,7 @@ A blog theme of Hexo
 
 ### Todo:
 * 增加多说评论
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
